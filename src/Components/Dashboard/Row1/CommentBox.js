@@ -23,7 +23,7 @@ export default class CommentBox extends React.Component {
    	    <div className="card-deck subcard-border-fixed subcard-height-fixed">
    	  	  <div className="card">
      	  		<div className="card-block">
-            <CommentForm />
+            <CommentForm addComment={this._addComment.bind(this)} />
   			    </div>
           </div>
         </div>
@@ -43,6 +43,22 @@ export default class CommentBox extends React.Component {
                avatarUrl={comment.avatarUrl}
                key={comment.id} />
     });
+  }
+
+  _addComment(commentAuthor, commentBody, commentTime) {
+
+    const comment = {
+      id: this.state.comments.length + 1,
+      author: commentAuthor,
+      body: commentBody,
+      time: commentTime,
+      avatarUrl: 'img/head_1.jpg'
+    };
+
+    this.setState({
+      comments: this.state.comments.concat([comment])
+    });
+
   }
 
   _fetchComments() {
