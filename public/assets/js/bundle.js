@@ -35581,7 +35581,7 @@ var Comment = function (_React$Component) {
             _react2.default.createElement("img", { className: "img-float-l img-tiny img-circle", src: this.props.avatarUrl }),
             _react2.default.createElement(
               "div",
-              { className: "p-t-1" },
+              { className: "p-t-3" },
               _react2.default.createElement(
                 "p",
                 { className: "card-text no-margin" },
@@ -35589,7 +35589,7 @@ var Comment = function (_React$Component) {
               ),
               _react2.default.createElement(
                 "p",
-                { className: "card-text text-right" },
+                { className: "card-text text-right " },
                 _react2.default.createElement(
                   "small",
                   { className: "text-muted" },
