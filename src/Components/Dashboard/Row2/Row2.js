@@ -1,4 +1,6 @@
 import React from "react";
+import StepCountsBox from "./StepCountsBox";
+import HeartRateBox from "./HeartRateBox";
 
 export default class Row2 extends React.Component {
 
@@ -7,29 +9,8 @@ export default class Row2 extends React.Component {
 		return(	
 		<div>	
 			<div className="card-deck">
-		     <div className="card">
-	   	  	   <div className="card-block">
-	     		  <h3 className="card-title float-l">步數</h3>
-	     		  <div className="text-right p-t-1">
-	     		  	<span className="purple">11月17日 (四) </span>
-	     		  	<div className="btn-group p-l-3" role="group">
-	     		  	  <button type="button" className="btn btn-secondary" src="#">日</button>
-	     		  	  <button type="button" className="btn btn-secondary" src="#">週</button>
-	     		  	  <button type="button" className="btn btn-secondary" src="#">月</button>
-	     		  	</div>
-	     		  </div>
-	     		  <div>
-	     		  	<span>This is a pen.</span>
-	     		  </div>
-	     		  <div className="height-300px"></div>
-			   </div>
-		     </div>
-		     <div className="card">
-		       <div className="card-block">
-		         <h3 className="card-title">心率</h3>
-		         <p className="card-text">This is an apple.</p>
-		       </div>
-		     </div>
+				<StepCountsBox />
+				<HeartRateBox />
 		   </div>
 
 		   	<div className="card-deck">

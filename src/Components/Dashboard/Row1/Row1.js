@@ -1,6 +1,6 @@
 import React from "react";
 import CommentBox from "./CommentBox";
-import SleepHours from "./SleepHours";
+import SleepHoursBox from "./SleepHoursBox";
 
 
 export default class Row1 extends React.Component {
@@ -9,7 +9,7 @@ export default class Row1 extends React.Component {
 		return(
    	   <div className="card-deck">
          	<CommentBox />
-            <SleepHours />
+            <SleepHoursBox />
    	   </div>
 		);
 	}
