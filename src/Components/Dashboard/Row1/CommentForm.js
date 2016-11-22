@@ -3,13 +3,6 @@ import Moment from 'moment';
 
 export default class CommentForm extends React.Component {
 
-    constructor() {
-    super();
-    this.state = {
-      characters: 0
-    };
-  }
-
 	render(){
 		return(
  			<form className="comment-form" onSubmit={this._handleSubmit.bind(this)}>

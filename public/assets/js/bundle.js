@@ -35767,12 +35767,7 @@ var CommentForm = function (_React$Component) {
     function CommentForm() {
         _classCallCheck(this, CommentForm);
 
-        var _this = _possibleConstructorReturn(this, (CommentForm.__proto__ || Object.getPrototypeOf(CommentForm)).call(this));
-
-        _this.state = {
-            characters: 0
-        };
-        return _this;
+        return _possibleConstructorReturn(this, (CommentForm.__proto__ || Object.getPrototypeOf(CommentForm)).apply(this, arguments));
     }
 
     _createClass(CommentForm, [{
