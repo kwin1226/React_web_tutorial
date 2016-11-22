@@ -1,0 +1,316 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url(http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+body{
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 500;
+}
+
+.navbar-brown{
+	background-color: rgba(96, 76, 19, 1);
+}
+.navbar-brand{
+	color: #fff;
+}
+.sub-nav-yellow{
+	background-color: #ffcc00;
+}
+.sub-nav-p{
+	padding: 10px 15px 10px 15px;
+}
+.p-l-3{
+	padding-left: 3%;
+}
+.p-l-5{
+	padding-left: 5%;
+}
+.p-l-8{
+	padding-left: 8%;
+}
+.p-l-10{
+	padding-left: 10%;
+}
+.p-l-11{
+	padding-left: 11%;
+}
+.p-r-3{
+	padding-right: 3%;
+}
+.p-r-5{
+	padding-right: 5%;
+}
+.p-t-0-7{
+	padding-top: 0.7%;
+}
+.p-t-1{
+	padding-top: 1%;
+}
+.p-t-2{
+	padding-top: 2%;
+}
+.p-t-3{
+	padding-top: 3%;
+}
+.p-t-5{
+	padding-top: 5%;
+}
+.p-t-10{
+	padding-top: 10%;
+}
+.p-t-25{
+	padding-top: 25%;
+}
+.p-t-50{
+	padding-top: 50%;
+}
+
+.p-t-75px{
+	padding-top: 75px;
+}
+.m-b-0-5{
+	margin-bottom: 0.5rem;
+}
+.m-t-4px{
+	margin-top:4px;
+}
+.card-container{
+	margin-left: 1.25rem;
+	margin-right: 1.25rem;
+}
+.card-nobg{
+	background-color: #f2f2f2;
+	border-width: 0;
+}
+.subcard{
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+.subcard-border-fixed{
+	border-spacing:0;
+	margin-bottom: 0px;
+}
+.subcard-width-fixed{
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+.subcard-height-fixed{
+	margin-bottom: 0.75rem;
+}
+.cus1{
+	float:left;
+	background-color: #fff;
+	margin-right: 8px;
+	border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.cus2{
+	float:left;
+	background-color: #fff;
+	margin-left: 8px;
+	border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.border-default{
+	border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.m-l-8{
+	margin-left: 8%; 
+}
+.m-r-8{
+	margin-right: 8%; 
+}
+.height-300px{
+	height:300px;
+}
+.float-l{
+	float: left;
+}
+.float-r{
+	float: right;
+}
+.full-width{
+  width: 100%;
+}
+.half-width{
+	width: 48.75%;
+}
+.img-meal{
+	width: 230px;
+	height: 230px;
+}
+.img-large{
+  max-height: 95%;
+  max-width: 95%;
+}
+.img-middle{
+  max-height: 15%;
+  max-width: 15%;
+}
+.img-small{
+  max-height: 25%;
+  max-width: 25%;
+}
+.img-tiny{
+	max-height: 10%;
+	max-width: 10%;
+}
+.img-icon-small{
+  max-height: 15px;
+  max-width: 15px;
+}
+.img-float-l{
+	float: left;
+	margin-right:10px;
+}
+.img-circle{
+	border-radius:50%;
+}
+.img-full{
+	max-width:100%;
+	max-height:100%;
+}
+.div-circle{
+	width:180px;
+	height: 180px;
+	border-radius:50%;
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+	text-align:center;
+	background-color: #FFFFF9;
+
+}
+.circle-text{
+	line-height: normal;
+    display:inline-block;
+    vertical-align: middle;
+}
+.text-shadow{
+	text-shadow:0.4px 0.4px;
+}
+.no-padding{
+	padding: 0px;
+}
+.no-margin{
+	margin: 0px;
+}
+.text-center{
+	text-align: center;
+}
+.text-right{
+	text-align: right;
+}
+.text-middle{
+	font-size:14px;
+}
+.text-small{
+	font-size:12px;
+}
+.textarea{
+	width: :50px;
+	height:40px;
+	border: none;
+}
+.btn-comment-submit{
+	text-align: right;
+}
+.btn-submit {
+	color: #fff;
+	font-size: 14px;
+	background-color: rgba(96, 76, 19, 1);
+}
+.iframeStyle{
+
+	border-width: 0;
+}
+.text-line-height{
+	line-height : 10px;
+}
+.gray{
+	color: #999999;
+}
+.red{
+	color: red;
+}
+.purple{
+	color: #946666;
+}
+.no-line-height{
+	line-height: 0;
+}
+.no-margin{
+	margin-bottom: 0;
+}
+.align-right{
+	text-align: right;
+}
+.alert-icon{
+	padding: 1px 9px 1px 9px;
+	vertical-align: top;
+	background-color: rgba(255, 255, 102, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(123, 97, 22, 1);
+    border-radius: 27px;
+}
+.border-black{
+	border-width: 0 1px 0 1px ;
+    border-style: solid;
+    border-color: #000000;
+}
+.body-bg{
+	background-color: #f2f2f2;
+}
+.contain{
+	padding:1% 2% 1% 2%;
+}
+.card-bg-gray{
+	background-color: #fcfcfc;
+}
+.card-deck .card {
+  width: initial;
+}
+
+
+/* content styles */
+
+.inside {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom,color-stop(0%, #f4f4f4), color-stop(100%, #ededed));
+  background: -moz-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+  background: -ms-linear-gradient(top, #f4f4f4 0%, #ededed 100%);
+}
+.inside-full-height {
+  /*
+  // if you want to give content full height give him height: 100%;
+  // with content full height you can't apply margins to the content
+  // content full height does not work in ie http://stackoverflow.com/questions/27384433/ie-display-table-cell-child-ignores-height-100
+  */
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.content {
+  padding: 12px 3px;
+}
+
+
+/* demo code start */
+
+.row {
+  /* no continaer class, so remove margin setting*/
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.row-demo .col-xs-4 {
+  background: rgba(255, 255, 255, .6);
+  color: #000;
+}
+
+.row-same-height {
+  display: flex;
+}
