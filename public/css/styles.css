@@ -4,7 +4,9 @@ body{
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: 500;
 }
-
+.text-middle{
+	font-weight: 400;
+}
 .navbar-brown{
 	background-color: rgba(96, 76, 19, 1);
 }
@@ -23,6 +25,9 @@ body{
 .p-l-5{
 	padding-left: 5%;
 }
+.p-l-6{
+	padding-left: 6%;
+}
 .p-l-8{
 	padding-left: 8%;
 }
@@ -38,8 +43,14 @@ body{
 .p-r-5{
 	padding-right: 5%;
 }
+.p-t-0-5{
+	padding-top: 0.5%;
+}
 .p-t-0-7{
 	padding-top: 0.7%;
+}
+.p-t-0-8{
+	padding-top: 0.8%;
 }
 .p-t-1{
 	padding-top: 1%;
@@ -50,11 +61,20 @@ body{
 .p-t-3{
 	padding-top: 3%;
 }
+.p-t-4{
+	padding-top: 4%;
+}
 .p-t-5{
 	padding-top: 5%;
 }
 .p-t-10{
 	padding-top: 10%;
+}
+.p-t-12{
+	padding-top: 12%;
+}
+.p-t-15{
+	padding-top: 15%;
 }
 .p-t-25{
 	padding-top: 25%;
@@ -71,6 +91,9 @@ body{
 }
 .m-t-4px{
 	margin-top:4px;
+}
+.hide{
+	display: none;
 }
 .card-container{
 	margin-left: 1.25rem;
@@ -110,9 +133,20 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.125);
 }
 .border-default{
+	background-color: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.125);
 }
-
+.d-table{
+	height: 100%;
+	display: table;
+}
+.v-center{
+	display: table-cell;
+    vertical-align: middle;
+}
+.h-center{
+	display: table-row;
+}
 .m-l-8{
 	margin-left: 8%; 
 }
@@ -150,6 +184,10 @@ body{
   max-height: 25%;
   max-width: 25%;
 }
+.img-small2{
+  max-height: 20%;
+  max-width: 20%;
+}
 .img-tiny{
 	max-height: 10%;
 	max-width: 10%;
@@ -157,6 +195,10 @@ body{
 .img-icon-small{
   max-height: 15px;
   max-width: 15px;
+}
+.img-icon-middle{
+  max-height: 23px;
+  max-width: 23px;
 }
 .img-float-l{
 	float: left;
@@ -177,7 +219,7 @@ body{
 	border-width: 1px;
 	border-color: gray;
 	text-align:center;
-	background-color: #FFFFF9;
+	background-color: #fff;
 
 }
 .circle-text{
@@ -207,9 +249,13 @@ body{
 	font-size:12px;
 }
 .textarea{
+	background-color: #fcfcfc;
 	width: :50px;
 	height:40px;
 	border: none;
+}
+.textarea:focus{
+	background-color: #fcfcfc;
 }
 .btn-comment-submit{
 	text-align: right;
@@ -220,7 +266,6 @@ body{
 	background-color: rgba(96, 76, 19, 1);
 }
 .iframeStyle{
-
 	border-width: 0;
 }
 .text-line-height{

@@ -8,7 +8,8 @@ export default class CommentBox extends React.Component {
   constructor(){
     super();
     this.state = {
-      comments :[]
+      comments :[],
+      comments_num :0
     };
   }
 
@@ -35,14 +36,37 @@ export default class CommentBox extends React.Component {
   _getComments(){
     return this.state.comments.map((comment) => {  
       //Notice: ()=> Arrow functions bind to the scope of where they are defined, not where they are called
-      return <Comment
+      return ( this._getCommentHead(comment, this.state.comments_num) );
+    });
+  }
+
+  _getCommentHead(comment, commentCount){  
+    //The last comment component doesn't need "subcard-height-fixed" class to fix padding-bottom
+    if(comment.id === commentCount){
+      return (
+            <div className="card-deck subcard-border-fixed" key={comment.id}>
+              <Comment
                id={comment.id}
                author={comment.author}
                body={comment.body}
                time={comment.time}
                avatarUrl={comment.avatarUrl}
                key={comment.id} />
-    });
+            </div>
+        );
+    }else{
+      return (
+            <div className="card-deck subcard-border-fixed subcard-height-fixed" key={comment.id}>
+              <Comment
+               id={comment.id}
+               author={comment.author}
+               body={comment.body}
+               time={comment.time}
+               avatarUrl={comment.avatarUrl}
+               key={comment.id} />
+            </div>
+        );
+    }
   }
 
   _addComment(commentAuthor, commentBody, commentTime) {
@@ -59,6 +83,9 @@ export default class CommentBox extends React.Component {
       comments: this.state.comments.concat([comment])
     });
 
+    this.setState({
+      comments_num: this.state.comments.length + 1
+    });
   }
 
   _fetchComments() {
@@ -66,7 +93,9 @@ export default class CommentBox extends React.Component {
       method: 'GET',
       url: 'http://localhost:3000/comments',
       success: (comments) => {
-        this.setState({ comments })
+        const n = comments.length;
+        this.setState({ comments });
+        this.setState({'comments_num':n});
       }
     });
   }

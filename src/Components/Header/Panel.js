@@ -1,10 +1,12 @@
 import React from 'react';
+import PanelSmall from './Panel-small';
 
 export default class Panel extends React.Component{
 
 	render(){
 		return(
-       <div className="row sub-nav-p sub-nav-yellow">
+      <div>
+       <div id="Panel-normal" className="row sub-nav-p sub-nav-yellow">
          <div className="col-sm-1 pull-left">
              <img className="img-large" src="img/head_male.png" alt="王威力" />
          </div>
@@ -36,6 +38,10 @@ export default class Panel extends React.Component{
            </div>
          </div>
        </div>
+
+        <PanelSmall />
+
+      </div>
         );
 	}
 }

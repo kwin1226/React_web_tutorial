@@ -35355,78 +35355,6 @@ module.exports = validateDOMNesting;
 module.exports = require('./lib/React');
 
 },{"./lib/React":56}],174:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Header = require('./Header/Header');
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Navigation = require('./Header/Navigation');
-
-var _Navigation2 = _interopRequireDefault(_Navigation);
-
-var _Panel = require('./Header/Panel');
-
-var _Panel2 = _interopRequireDefault(_Panel);
-
-var _DashBoard = require('./DashBoard/DashBoard');
-
-var _DashBoard2 = _interopRequireDefault(_DashBoard);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          _Header2.default,
-          null,
-          _react2.default.createElement(
-            _Navigation2.default,
-            null,
-            "Casa Vida"
-          ),
-          _react2.default.createElement(_Panel2.default, null)
-        ),
-        _react2.default.createElement(_DashBoard2.default, null)
-      );
-    }
-  }]);
-
-  return App;
-}(_react2.default.Component);
-
-exports.default = App;
-
-},{"./DashBoard/DashBoard":175,"./Header/Header":185,"./Header/Navigation":186,"./Header/Panel":187,"react":173}],175:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35451,6 +35379,10 @@ var _Row3 = require("./Row2/Row2");
 
 var _Row4 = _interopRequireDefault(_Row3);
 
+var _Row5 = require("./Row3/Row3");
+
+var _Row6 = _interopRequireDefault(_Row5);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35473,10 +35405,10 @@ var Dashboard = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"div",
-				{ id: "card-container" },
-				_react2.default.createElement(_DatePicker2.default, null),
+				{ id: "card-container", className: "p-t-12" },
 				_react2.default.createElement(_Row2.default, null),
-				_react2.default.createElement(_Row4.default, null)
+				_react2.default.createElement(_Row4.default, null),
+				_react2.default.createElement(_Row6.default, null)
 			);
 		}
 	}]);
@@ -35486,7 +35418,7 @@ var Dashboard = function (_React$Component) {
 
 exports.default = Dashboard;
 
-},{"./DatePicker/DatePicker":176,"./Row1/Row1":180,"./Row2/Row2":183,"react":173}],176:[function(require,module,exports){
+},{"./DatePicker/DatePicker":175,"./Row1/Row1":179,"./Row2/Row2":182,"./Row3/Row3":188,"react":173}],175:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35521,7 +35453,7 @@ var DatePicker = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"div",
-				{ className: "col-sm-3 offset-sm-9" },
+				{ className: "col-sm-3 offset-sm-9 p-t-12" },
 				_react2.default.createElement(
 					"h3",
 					null,
@@ -35536,7 +35468,7 @@ var DatePicker = function (_React$Component) {
 
 exports.default = DatePicker;
 
-},{"react":173}],177:[function(require,module,exports){
+},{"react":173}],176:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35571,33 +35503,29 @@ var Comment = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "card-deck subcard-border-fixed subcard-height-fixed" },
+        { className: "card" },
         _react2.default.createElement(
           "div",
-          { className: "card" },
+          { className: "card-block" },
+          _react2.default.createElement("img", { className: "img-float-l img-tiny img-circle", src: this.props.avatarUrl }),
           _react2.default.createElement(
             "div",
-            { className: "card-block" },
-            _react2.default.createElement("img", { className: "img-float-l img-tiny img-circle", src: this.props.avatarUrl }),
+            { className: "p-t-3" },
             _react2.default.createElement(
-              "div",
-              { className: "p-t-3" },
+              "p",
+              { className: "card-text" },
+              this.props.body
+            ),
+            _react2.default.createElement(
+              "p",
+              { className: "card-text text-right " },
               _react2.default.createElement(
-                "p",
-                { className: "card-text no-margin" },
-                this.props.body
-              ),
-              _react2.default.createElement(
-                "p",
-                { className: "card-text text-right " },
-                _react2.default.createElement(
-                  "small",
-                  { className: "text-muted" },
-                  this.props.author,
-                  " \u65BC ",
-                  this.props.time,
-                  " \u7D00\u9304"
-                )
+                "small",
+                { className: "text-muted" },
+                this.props.author,
+                " \u65BC ",
+                this.props.time,
+                " \u7D00\u9304"
               )
             )
           )
@@ -35611,7 +35539,7 @@ var Comment = function (_React$Component) {
 
 exports.default = Comment;
 
-},{"react":173}],178:[function(require,module,exports){
+},{"react":173}],177:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35653,7 +35581,8 @@ var CommentBox = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (CommentBox.__proto__ || Object.getPrototypeOf(CommentBox)).call(this));
 
     _this.state = {
-      comments: []
+      comments: [],
+      comments_num: 0
     };
     return _this;
   }
@@ -35689,16 +35618,42 @@ var CommentBox = function (_React$Component) {
   }, {
     key: '_getComments',
     value: function _getComments() {
+      var _this2 = this;
+
       return this.state.comments.map(function (comment) {
         //Notice: ()=> Arrow functions bind to the scope of where they are defined, not where they are called
-        return _react2.default.createElement(_Comment2.default, {
-          id: comment.id,
-          author: comment.author,
-          body: comment.body,
-          time: comment.time,
-          avatarUrl: comment.avatarUrl,
-          key: comment.id });
+        return _this2._getCommentHead(comment, _this2.state.comments_num);
       });
+    }
+  }, {
+    key: '_getCommentHead',
+    value: function _getCommentHead(comment, commentCount) {
+      //The last comment component doesn't need "subcard-height-fixed" class to fix padding-bottom
+      if (comment.id === commentCount) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'card-deck subcard-border-fixed', key: comment.id },
+          _react2.default.createElement(_Comment2.default, {
+            id: comment.id,
+            author: comment.author,
+            body: comment.body,
+            time: comment.time,
+            avatarUrl: comment.avatarUrl,
+            key: comment.id })
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { className: 'card-deck subcard-border-fixed subcard-height-fixed', key: comment.id },
+          _react2.default.createElement(_Comment2.default, {
+            id: comment.id,
+            author: comment.author,
+            body: comment.body,
+            time: comment.time,
+            avatarUrl: comment.avatarUrl,
+            key: comment.id })
+        );
+      }
     }
   }, {
     key: '_addComment',
@@ -35715,17 +35670,23 @@ var CommentBox = function (_React$Component) {
       this.setState({
         comments: this.state.comments.concat([comment])
       });
+
+      this.setState({
+        comments_num: this.state.comments.length + 1
+      });
     }
   }, {
     key: '_fetchComments',
     value: function _fetchComments() {
-      var _this2 = this;
+      var _this3 = this;
 
       _jquery2.default.ajax({
         method: 'GET',
         url: 'http://localhost:3000/comments',
         success: function success(comments) {
-          _this2.setState({ comments: comments });
+          var n = comments.length;
+          _this3.setState({ comments: comments });
+          _this3.setState({ 'comments_num': n });
         }
       });
     }
@@ -35736,7 +35697,7 @@ var CommentBox = function (_React$Component) {
 
 exports.default = CommentBox;
 
-},{"./Comment":177,"./CommentForm":179,"jquery":26,"react":173}],179:[function(require,module,exports){
+},{"./Comment":176,"./CommentForm":178,"jquery":26,"react":173}],178:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -35810,7 +35771,7 @@ var CommentForm = function (_React$Component) {
 
 exports.default = CommentForm;
 
-},{"moment":27,"react":173}],180:[function(require,module,exports){
+},{"moment":27,"react":173}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35853,7 +35814,7 @@ var Row1 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        { className: "card-deck" },
+        { id: "startchange", className: "card-deck" },
         _react2.default.createElement(_CommentBox2.default, null),
         _react2.default.createElement(_SleepHoursBox2.default, null)
       );
@@ -35865,7 +35826,7 @@ var Row1 = function (_React$Component) {
 
 exports.default = Row1;
 
-},{"./CommentBox":178,"./SleepHoursBox":181,"react":173}],181:[function(require,module,exports){
+},{"./CommentBox":177,"./SleepHoursBox":180,"react":173}],180:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35948,7 +35909,7 @@ var SleepHours = function (_React$Component) {
 
 exports.default = SleepHours;
 
-},{"react":173}],182:[function(require,module,exports){
+},{"react":173}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36003,7 +35964,7 @@ var HeartRateBox = function (_React$Component) {
 
 exports.default = HeartRateBox;
 
-},{"react":173}],183:[function(require,module,exports){
+},{"react":173}],182:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36047,245 +36008,9 @@ var Row2 = function (_React$Component) {
 
 			return _react2.default.createElement(
 				"div",
-				null,
-				_react2.default.createElement(
-					"div",
-					{ className: "card-deck" },
-					_react2.default.createElement(_StepCountsBox2.default, null),
-					_react2.default.createElement(_HeartRateBox2.default, null)
-				),
-				_react2.default.createElement(
-					"div",
-					{ className: "card-deck" },
-					_react2.default.createElement(
-						"div",
-						{ className: "card-deck subcard-border-fixed subcard-height-fixed" },
-						_react2.default.createElement(
-							"div",
-							{ className: "card" },
-							_react2.default.createElement(
-								"div",
-								{ className: "card-block" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-title" },
-									"\u8840\u58D3",
-									_react2.default.createElement("img", { src: "img/check.png", className: "img-middle float-r", alt: "\u6B63\u5E38" })
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"\u6536\u7E2E\u58D3"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"110mmHg"
-								),
-								_react2.default.createElement("hr", null),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"\u8212\u5F35\u58D3"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"78mmHg"
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "card" },
-							_react2.default.createElement(
-								"div",
-								{ className: "card-block" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-title" },
-									"\u8840\u7CD6",
-									_react2.default.createElement("img", { src: "img/cross.png", className: "img-middle float-r", alt: "\u8B66\u544A" })
-								),
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-text text-center red text-shadow" },
-									"126"
-								),
-								_react2.default.createElement(
-									"h4",
-									null,
-									"\xA0"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"mg/dl"
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "card-deck subcard-border-fixed" },
-						_react2.default.createElement(
-							"div",
-							{ className: "card" },
-							_react2.default.createElement(
-								"div",
-								{ className: "card-block" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-title" },
-									"\u9AD4\u91CD",
-									_react2.default.createElement("img", { src: "img/cross.png", className: "img-middle float-r", alt: "\u8B66\u544A" })
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"\u76EE\u524D"
-								),
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-text text-center text-shadow red" },
-									"80kg"
-								),
-								_react2.default.createElement(
-									"h4",
-									{ className: "card-text text-center" },
-									"\u8DDD\u96E2\u76EE\u6A19\u9084\u6709"
-								),
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-text text-center text-shadow red" },
-									"-16kg"
-								)
-							)
-						),
-						_react2.default.createElement(
-							"div",
-							{ className: "card" },
-							_react2.default.createElement(
-								"div",
-								{ className: "card-block" },
-								_react2.default.createElement(
-									"h3",
-									{ className: "card-title" },
-									"\u5361\u8DEF\u91CC\u6D88\u8017",
-									_react2.default.createElement("img", { src: "img/check.png", className: "img-middle float-r", alt: "\u6B63\u5E38" })
-								),
-								_react2.default.createElement(
-									"div",
-									{ className: "div-circle col-sm-8 offset-sm-2" },
-									_react2.default.createElement(
-										"div",
-										{ className: "p-t-25" },
-										_react2.default.createElement(
-											"h3",
-											{ className: "card-text circle-text text-shadow" },
-											"2345cal"
-										),
-										_react2.default.createElement(
-											"h3",
-											{ className: "card-text circle-text gray" },
-											"2000cal"
-										)
-									)
-								)
-							)
-						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "card" },
-						_react2.default.createElement(
-							"div",
-							{ className: "card-block" },
-							_react2.default.createElement(
-								"h3",
-								{ className: "card-title m-b-0-5" },
-								"\u98F2\u98DF"
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "div-circle col-sm-8 offset-sm-4" },
-								_react2.default.createElement(
-									"div",
-									{ className: "p-t-25" },
-									_react2.default.createElement(
-										"h3",
-										{ className: "card-text circle-text text-shadow" },
-										"500cal"
-									),
-									_react2.default.createElement(
-										"h3",
-										{ className: "card-text circle-text gray" },
-										"1500cal"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "col-sm-8 offset-sm-4 p-t-3" },
-								_react2.default.createElement(
-									"div",
-									{ className: "btn-group", role: "group" },
-									_react2.default.createElement(
-										"button",
-										{ type: "button", className: "btn btn-secondary", src: "#" },
-										"\u65E5"
-									),
-									_react2.default.createElement(
-										"button",
-										{ type: "button", className: "btn btn-secondary", src: "#" },
-										"\u9031"
-									),
-									_react2.default.createElement(
-										"button",
-										{ type: "button", className: "btn btn-secondary", src: "#" },
-										"\u6708"
-									)
-								)
-							),
-							_react2.default.createElement(
-								"div",
-								{ className: "row row-demo row-same-height col-sm-12 p-t-3" },
-								_react2.default.createElement(
-									"div",
-									{ className: "col-xs-5 no-padding align-right" },
-									_react2.default.createElement("img", { src: "img/meal_breakfast.png", alt: "breakfast", className: "rounded img-full border-default" })
-								),
-								_react2.default.createElement(
-									"div",
-									{ className: "col-xs-2 border-default text-line-height" },
-									_react2.default.createElement(
-										"div",
-										{ className: "p-t-75px text-center" },
-										_react2.default.createElement(
-											"p",
-											null,
-											"\u65E9\u9910"
-										),
-										_react2.default.createElement(
-											"p",
-											null,
-											"500cal"
-										)
-									)
-								),
-								_react2.default.createElement(
-									"div",
-									{ className: "col-xs-5 border-default" },
-									_react2.default.createElement(
-										"p",
-										{ className: "p-t-25" },
-										"\u860B\u679C\u725B\u5976\u9EA5\u7247 (\u4F4E\u8102\u59761\u676F240c.c\u3001\u860B\u679C\u534A\u500B\u3001\u9EA5\u724720g)\u5410\u53F8\u5305\u86CB (\u767D\u5410\u53F81\u7247\u3001\u86CB1\u500B\u3001\u690D\u7269\u6CB95g)"
-									)
-								)
-							)
-						)
-					)
-				)
+				{ className: "card-deck" },
+				_react2.default.createElement(_StepCountsBox2.default, null),
+				_react2.default.createElement(_HeartRateBox2.default, null)
 			);
 		}
 	}]);
@@ -36295,7 +36020,7 @@ var Row2 = function (_React$Component) {
 
 exports.default = Row2;
 
-},{"./HeartRateBox":182,"./StepCountsBox":184,"react":173}],184:[function(require,module,exports){
+},{"./HeartRateBox":181,"./StepCountsBox":183,"react":173}],183:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36378,7 +36103,517 @@ var StepCountBox = function (_React$Component) {
 
 exports.default = StepCountBox;
 
+},{"react":173}],184:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Diet = function (_React$Component) {
+	_inherits(Diet, _React$Component);
+
+	function Diet() {
+		_classCallCheck(this, Diet);
+
+		return _possibleConstructorReturn(this, (Diet.__proto__ || Object.getPrototypeOf(Diet)).apply(this, arguments));
+	}
+
+	_createClass(Diet, [{
+		key: "render",
+		value: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "row row-demo row-same-height col-sm-12 p-t-3" },
+				_react2.default.createElement(
+					"div",
+					{ className: "col-xs-5 no-padding align-right" },
+					_react2.default.createElement("img", { src: this.props.imgUrl, alt: "breakfast", className: "rounded img-full border-default" })
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "col-xs-2 border-default text-line-height" },
+					_react2.default.createElement(
+						"div",
+						{ className: "p-t-75px text-center text-middle" },
+						_react2.default.createElement(
+							"p",
+							null,
+							this.props.meal
+						),
+						_react2.default.createElement(
+							"p",
+							null,
+							this.props.cal,
+							"cal"
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "col-xs-5 border-default" },
+					_react2.default.createElement(
+						"div",
+						{ className: "d-table" },
+						_react2.default.createElement(
+							"p",
+							{ className: "text-middle v-center" },
+							this.props.description
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Diet;
+}(_react2.default.Component);
+
+exports.default = Diet;
+
 },{"react":173}],185:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _jquery = require("jquery");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _DietButtonGroup = require("./DietButtonGroup");
+
+var _DietButtonGroup2 = _interopRequireDefault(_DietButtonGroup);
+
+var _Diet = require("./Diet");
+
+var _Diet2 = _interopRequireDefault(_Diet);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DietBox = function (_React$Component) {
+	_inherits(DietBox, _React$Component);
+
+	function DietBox() {
+		_classCallCheck(this, DietBox);
+
+		var _this = _possibleConstructorReturn(this, (DietBox.__proto__ || Object.getPrototypeOf(DietBox)).call(this));
+
+		_this.state = {
+			diets: []
+		};
+		return _this;
+	}
+
+	_createClass(DietBox, [{
+		key: "componentWillMount",
+		value: function componentWillMount() {
+			this._fetchDiets(1);
+		}
+	}, {
+		key: "render",
+		value: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "card" },
+				_react2.default.createElement(
+					"div",
+					{ className: "card-block" },
+					_react2.default.createElement(
+						"h3",
+						{ className: "card-title m-b-0-5" },
+						"\u98F2\u98DF"
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "div-circle col-sm-8 offset-sm-4" },
+						_react2.default.createElement(
+							"div",
+							{ className: "p-t-25" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-text circle-text text-shadow" },
+								"500cal"
+							),
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-text circle-text gray" },
+								"1500cal"
+							)
+						)
+					),
+					_react2.default.createElement(_DietButtonGroup2.default, { fetchDiets: this._fetchDiets.bind(this) }),
+					_react2.default.createElement(_Diet2.default, {
+						id: this.state.diets.id,
+						meal: this.state.diets.meal,
+						cal: this.state.diets.cal,
+						description: this.state.diets.description,
+						imgUrl: this.state.diets.imgUrl,
+						key: this.state.diets.id })
+				)
+			);
+		}
+	}, {
+		key: "_fetchDiets",
+		value: function _fetchDiets(dietID) {
+			var _this2 = this;
+
+			var url = 'http://localhost:3000/diets/' + dietID;
+			_jquery2.default.ajax({
+				method: 'GET',
+				url: url,
+				success: function success(diets) {
+					_this2.setState({ diets: diets });
+				}
+			});
+		}
+	}]);
+
+	return DietBox;
+}(_react2.default.Component);
+
+exports.default = DietBox;
+
+},{"./Diet":184,"./DietButtonGroup":186,"jquery":26,"react":173}],186:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DietButtonGroup = function (_React$Component) {
+	_inherits(DietButtonGroup, _React$Component);
+
+	function DietButtonGroup() {
+		_classCallCheck(this, DietButtonGroup);
+
+		return _possibleConstructorReturn(this, (DietButtonGroup.__proto__ || Object.getPrototypeOf(DietButtonGroup)).apply(this, arguments));
+	}
+
+	_createClass(DietButtonGroup, [{
+		key: "render",
+		value: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				{ className: "col-sm-8 offset-sm-4 p-t-3" },
+				_react2.default.createElement(
+					"div",
+					{ className: "btn-group", role: "group" },
+					_react2.default.createElement(
+						"button",
+						{ type: "button", className: "btn btn-secondary", src: "#", "data-meal": "1", onClick: this._handleDiet.bind(this) },
+						"\u65E9"
+					),
+					_react2.default.createElement(
+						"button",
+						{ type: "button", className: "btn btn-secondary", src: "#", "data-meal": "2", onClick: this._handleDiet.bind(this) },
+						"\u4E2D"
+					),
+					_react2.default.createElement(
+						"button",
+						{ type: "button", className: "btn btn-secondary", src: "#", "data-meal": "3", onClick: this._handleDiet.bind(this) },
+						"\u665A"
+					)
+				)
+			);
+		}
+	}, {
+		key: "_handleDiet",
+		value: function _handleDiet(e) {
+			var meal = e.target.dataset.meal;
+			this.props.fetchDiets(meal);
+		}
+	}]);
+
+	return DietButtonGroup;
+}(_react2.default.Component);
+
+exports.default = DietButtonGroup;
+
+},{"react":173}],187:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PhysicalBox = function (_React$Component) {
+	_inherits(PhysicalBox, _React$Component);
+
+	function PhysicalBox() {
+		_classCallCheck(this, PhysicalBox);
+
+		return _possibleConstructorReturn(this, (PhysicalBox.__proto__ || Object.getPrototypeOf(PhysicalBox)).apply(this, arguments));
+	}
+
+	_createClass(PhysicalBox, [{
+		key: "render",
+		value: function render() {
+
+			return _react2.default.createElement(
+				"div",
+				null,
+				_react2.default.createElement(
+					"div",
+					{ className: "card-deck subcard-border-fixed subcard-height-fixed" },
+					_react2.default.createElement(
+						"div",
+						{ className: "card" },
+						_react2.default.createElement(
+							"div",
+							{ className: "card-block" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-title" },
+								"\u8840\u58D3",
+								_react2.default.createElement("img", { src: "img/check.png", className: "img-middle float-r", alt: "\u6B63\u5E38" })
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"\u6536\u7E2E\u58D3"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"110mmHg"
+							),
+							_react2.default.createElement("hr", null),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"\u8212\u5F35\u58D3"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"78mmHg"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "card" },
+						_react2.default.createElement(
+							"div",
+							{ className: "card-block" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-title" },
+								"\u8840\u7CD6",
+								_react2.default.createElement("img", { src: "img/cross.png", className: "img-middle float-r", alt: "\u8B66\u544A" })
+							),
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-text text-center red text-shadow" },
+								"126"
+							),
+							_react2.default.createElement(
+								"h4",
+								null,
+								"\xA0"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"mg/dl"
+							)
+						)
+					)
+				),
+				_react2.default.createElement(
+					"div",
+					{ className: "card-deck subcard-border-fixed" },
+					_react2.default.createElement(
+						"div",
+						{ className: "card" },
+						_react2.default.createElement(
+							"div",
+							{ className: "card-block" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-title" },
+								"\u9AD4\u91CD",
+								_react2.default.createElement("img", { src: "img/cross.png", className: "img-middle float-r", alt: "\u8B66\u544A" })
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"\u76EE\u524D"
+							),
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-text text-center text-shadow red" },
+								"80kg"
+							),
+							_react2.default.createElement(
+								"h4",
+								{ className: "card-text text-center" },
+								"\u8DDD\u96E2\u76EE\u6A19\u9084\u6709"
+							),
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-text text-center text-shadow red" },
+								"-16kg"
+							)
+						)
+					),
+					_react2.default.createElement(
+						"div",
+						{ className: "card" },
+						_react2.default.createElement(
+							"div",
+							{ className: "card-block" },
+							_react2.default.createElement(
+								"h3",
+								{ className: "card-title" },
+								"\u5361\u8DEF\u91CC\u6D88\u8017",
+								_react2.default.createElement("img", { src: "img/check.png", className: "img-middle float-r", alt: "\u6B63\u5E38" })
+							),
+							_react2.default.createElement(
+								"div",
+								{ className: "div-circle col-sm-8 offset-sm-2" },
+								_react2.default.createElement(
+									"div",
+									{ className: "p-t-25" },
+									_react2.default.createElement(
+										"h3",
+										{ className: "card-text circle-text text-shadow" },
+										"2345cal"
+									),
+									_react2.default.createElement(
+										"h3",
+										{ className: "card-text circle-text gray" },
+										"2000cal"
+									)
+								)
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return PhysicalBox;
+}(_react2.default.Component);
+
+exports.default = PhysicalBox;
+
+},{"react":173}],188:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _PhysicalBox = require("./PhysicalBox");
+
+var _PhysicalBox2 = _interopRequireDefault(_PhysicalBox);
+
+var _DietBox = require("./DietBox");
+
+var _DietBox2 = _interopRequireDefault(_DietBox);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Row3 = function (_React$Component) {
+	_inherits(Row3, _React$Component);
+
+	function Row3() {
+		_classCallCheck(this, Row3);
+
+		return _possibleConstructorReturn(this, (Row3.__proto__ || Object.getPrototypeOf(Row3)).apply(this, arguments));
+	}
+
+	_createClass(Row3, [{
+		key: "render",
+		value: function render() {
+			return _react2.default.createElement(
+				"div",
+				{ className: "card-deck" },
+				_react2.default.createElement(_PhysicalBox2.default, null),
+				_react2.default.createElement(_DietBox2.default, null)
+			);
+		}
+	}]);
+
+	return Row3;
+}(_react2.default.Component);
+
+exports.default = Row3;
+
+},{"./DietBox":185,"./PhysicalBox":187,"react":173}],189:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36413,7 +36648,7 @@ var Header = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"header",
-				null,
+				{ className: "navbar-fixed-top" },
 				this.props.children
 			);
 		}
@@ -36424,7 +36659,7 @@ var Header = function (_React$Component) {
 
 exports.default = Header;
 
-},{"react":173}],186:[function(require,module,exports){
+},{"react":173}],190:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36492,7 +36727,7 @@ var Navigation = function (_React$Component) {
 
 exports.default = Navigation;
 
-},{"react":173}],187:[function(require,module,exports){
+},{"react":173}],191:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36513,6 +36748,130 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var PanelSmall = function (_React$Component) {
+  _inherits(PanelSmall, _React$Component);
+
+  function PanelSmall() {
+    _classCallCheck(this, PanelSmall);
+
+    return _possibleConstructorReturn(this, (PanelSmall.__proto__ || Object.getPrototypeOf(PanelSmall)).apply(this, arguments));
+  }
+
+  _createClass(PanelSmall, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { id: "Panel-small", className: "row sub-nav-p sub-nav-yellow hide" },
+        _react2.default.createElement(
+          "div",
+          { className: "col-sm-2" },
+          _react2.default.createElement("img", { className: "img-small2 img-float-l", src: "img/head_male.png", alt: "\u738B\u5A01\u529B" }),
+          _react2.default.createElement(
+            "h5",
+            { className: "p-t-3 img-float-l" },
+            "\u738B\u5A01\u529B"
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "p-t-4" },
+            _react2.default.createElement(
+              "span",
+              { className: "alert-icon text-small" },
+              "\u6CE8\u610F"
+            )
+          )
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "col-sm-10 no-padding" },
+          _react2.default.createElement("div", { className: "col-sm-1 no-padding" }),
+          _react2.default.createElement(
+            "div",
+            { className: "col-sm-2 text-center p-t-0-8 no-line-height" },
+            _react2.default.createElement(
+              "p",
+              { className: "p-l-11" },
+              "\u4ECA\u65E5\u7761\u7720 3H",
+              _react2.default.createElement(
+                "span",
+                { className: "p-l-8" },
+                _react2.default.createElement("img", { src: "img/cross.png", className: "img-icon-middle" })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-sm-3 text-center p-t-0-8 no-line-height border-black" },
+            _react2.default.createElement(
+              "p",
+              { className: "p-l-6" },
+              "\u4ECA\u65E5\u6B65\u6578 4346",
+              _react2.default.createElement(
+                "span",
+                { className: "p-l-8" },
+                _react2.default.createElement("img", { src: "img/check.png", className: "img-icon-middle" })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-sm-2 text-center p-t-0-8 no-line-height" },
+            _react2.default.createElement(
+              "p",
+              { className: "p-l-11" },
+              "\u672C\u5C0F\u6642\u6B65\u6578 57",
+              _react2.default.createElement(
+                "span",
+                { className: "p-l-8" },
+                _react2.default.createElement("img", { src: "img/cross.png", className: "img-icon-middle" })
+              )
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-sm-3 p-l-5 p-t-0-7" },
+            _react2.default.createElement(
+              "h5",
+              null,
+              "2016.11.17 (\u4E09)"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return PanelSmall;
+}(_react2.default.Component);
+
+exports.default = PanelSmall;
+
+},{"react":173}],192:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _PanelSmall = require('./Panel-small');
+
+var _PanelSmall2 = _interopRequireDefault(_PanelSmall);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Panel = function (_React$Component) {
   _inherits(Panel, _React$Component);
 
@@ -36523,128 +36882,133 @@ var Panel = function (_React$Component) {
   }
 
   _createClass(Panel, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { className: "row sub-nav-p sub-nav-yellow" },
+        'div',
+        null,
         _react2.default.createElement(
-          "div",
-          { className: "col-sm-1 pull-left" },
-          _react2.default.createElement("img", { className: "img-large", src: "img/head_male.png", alt: "\u738B\u5A01\u529B" })
-        ),
-        _react2.default.createElement(
-          "div",
-          { className: "col-sm-11 no-padding" },
+          'div',
+          { id: 'Panel-normal', className: 'row sub-nav-p sub-nav-yellow' },
           _react2.default.createElement(
-            "div",
-            { className: "col-sm-2 no-padding" },
+            'div',
+            { className: 'col-sm-1 pull-left' },
+            _react2.default.createElement('img', { className: 'img-large', src: 'img/head_male.png', alt: '\u738B\u5A01\u529B' })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'col-sm-11 no-padding' },
             _react2.default.createElement(
-              "div",
-              { className: "p-t-3" },
+              'div',
+              { className: 'col-sm-2 no-padding' },
               _react2.default.createElement(
-                "h3",
+                'div',
+                { className: 'p-t-3' },
+                _react2.default.createElement(
+                  'h3',
+                  null,
+                  '\u738B\u5A01\u529B ',
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'alert-icon text-small' },
+                    '\u6CE8\u610F'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'no-line-height text-small gray' },
+                  _react2.default.createElement(
+                    'span',
+                    null,
+                    '68\u6B72 0989051144'
+                  )
+                ),
+                _react2.default.createElement(
+                  'p',
+                  { className: 'no-line-height text-small gray' },
+                  _react2.default.createElement(
+                    'span',
+                    null,
+                    '2016.03.05'
+                  )
+                )
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-sm-2 text-center' },
+              _react2.default.createElement(
+                'p',
+                { className: 'p-l-11' },
+                '\u4ECA\u65E5\u7761\u7720',
+                _react2.default.createElement(
+                  'span',
+                  { className: 'p-l-8' },
+                  _react2.default.createElement('img', { src: 'img/cross.png', className: 'img-icon-small' })
+                )
+              ),
+              _react2.default.createElement(
+                'h3',
                 null,
-                "\u738B\u5A01\u529B ",
+                '3H'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-sm-3 text-center border-black' },
+              _react2.default.createElement(
+                'p',
+                { className: 'p-l-11' },
+                '\u4ECA\u65E5\u6B65\u6578',
                 _react2.default.createElement(
-                  "span",
-                  { className: "alert-icon text-small" },
-                  "\u6CE8\u610F"
+                  'span',
+                  { className: 'p-l-8' },
+                  _react2.default.createElement('img', { src: 'img/check.png', className: 'img-icon-small' })
                 )
               ),
               _react2.default.createElement(
-                "p",
-                { className: "no-line-height text-small gray" },
+                'h3',
+                null,
+                '4346'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'col-sm-2 text-center' },
+              _react2.default.createElement(
+                'p',
+                { className: 'p-l-11' },
+                '\u672C\u5C0F\u6642\u6B65\u6578',
                 _react2.default.createElement(
-                  "span",
-                  null,
-                  "68\u6B72 0989051144"
+                  'span',
+                  { className: 'p-l-8' },
+                  _react2.default.createElement('img', { src: 'img/cross.png', className: 'img-icon-small' })
                 )
               ),
               _react2.default.createElement(
-                "p",
-                { className: "no-line-height text-small gray" },
-                _react2.default.createElement(
-                  "span",
-                  null,
-                  "2016.03.05"
-                )
+                'h3',
+                null,
+                '57'
               )
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-sm-2 text-center" },
+            ),
+            _react2.default.createElement('div', { className: 'col-sm-1' }),
             _react2.default.createElement(
-              "p",
-              { className: "p-l-11" },
-              "\u4ECA\u65E5\u7761\u7720",
+              'div',
+              { className: 'col-sm-2 p-l-3 p-r-3 p-t-0-7' },
               _react2.default.createElement(
-                "span",
-                { className: "p-l-8" },
-                _react2.default.createElement("img", { src: "img/cross.png", className: "img-icon-small" })
-              )
-            ),
-            _react2.default.createElement(
-              "h3",
-              null,
-              "3H"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-sm-3 text-center border-black" },
-            _react2.default.createElement(
-              "p",
-              { className: "p-l-11" },
-              "\u4ECA\u65E5\u6B65\u6578",
+                'button',
+                { className: 'full-width btn-block text-middle' },
+                '\u67E5\u770B\u5065\u6AA2\u8CC7\u6599'
+              ),
               _react2.default.createElement(
-                "span",
-                { className: "p-l-8" },
-                _react2.default.createElement("img", { src: "img/check.png", className: "img-icon-small" })
+                'button',
+                { className: 'full-width btn-block text-middle' },
+                '\u500B\u4EBA\u8CC7\u6599'
               )
-            ),
-            _react2.default.createElement(
-              "h3",
-              null,
-              "4346"
-            )
-          ),
-          _react2.default.createElement(
-            "div",
-            { className: "col-sm-2 text-center" },
-            _react2.default.createElement(
-              "p",
-              { className: "p-l-11" },
-              "\u672C\u5C0F\u6642\u6B65\u6578",
-              _react2.default.createElement(
-                "span",
-                { className: "p-l-8" },
-                _react2.default.createElement("img", { src: "img/cross.png", className: "img-icon-small" })
-              )
-            ),
-            _react2.default.createElement(
-              "h3",
-              null,
-              "57"
-            )
-          ),
-          _react2.default.createElement("div", { className: "col-sm-1" }),
-          _react2.default.createElement(
-            "div",
-            { className: "col-sm-2 p-l-3 p-r-3 p-t-0-7" },
-            _react2.default.createElement(
-              "button",
-              { className: "full-width btn-block text-middle" },
-              "\u67E5\u770B\u5065\u6AA2\u8CC7\u6599"
-            ),
-            _react2.default.createElement(
-              "button",
-              { className: "full-width btn-block text-middle" },
-              "\u500B\u4EBA\u8CC7\u6599"
             )
           )
-        )
+        ),
+        _react2.default.createElement(_PanelSmall2.default, null)
       );
     }
   }]);
@@ -36654,7 +37018,79 @@ var Panel = function (_React$Component) {
 
 exports.default = Panel;
 
-},{"react":173}],188:[function(require,module,exports){
+},{"./Panel-small":191,"react":173}],193:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Header = require('./Header/Header');
+
+var _Header2 = _interopRequireDefault(_Header);
+
+var _Navigation = require('./Header/Navigation');
+
+var _Navigation2 = _interopRequireDefault(_Navigation);
+
+var _Panel = require('./Header/Panel');
+
+var _Panel2 = _interopRequireDefault(_Panel);
+
+var _DashBoard = require('./DashBoard/DashBoard');
+
+var _DashBoard2 = _interopRequireDefault(_DashBoard);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Root = function (_React$Component) {
+  _inherits(Root, _React$Component);
+
+  function Root() {
+    _classCallCheck(this, Root);
+
+    return _possibleConstructorReturn(this, (Root.__proto__ || Object.getPrototypeOf(Root)).apply(this, arguments));
+  }
+
+  _createClass(Root, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _Header2.default,
+          null,
+          _react2.default.createElement(
+            _Navigation2.default,
+            null,
+            "Casa Vida"
+          ),
+          _react2.default.createElement(_Panel2.default, null)
+        ),
+        _react2.default.createElement(_DashBoard2.default, null)
+      );
+    }
+  }]);
+
+  return Root;
+}(_react2.default.Component);
+
+exports.default = Root;
+
+},{"./DashBoard/DashBoard":174,"./Header/Header":189,"./Header/Navigation":190,"./Header/Panel":192,"react":173}],194:[function(require,module,exports){
 'use strict';
 
 var _react = require('react');
@@ -36669,16 +37105,31 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _App = require('./Components/App');
+var _Root = require('./Components/Root');
 
-var _App2 = _interopRequireDefault(_App);
+var _Root2 = _interopRequireDefault(_Root);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _jquery2.default)(function () {
 	var app = document.getElementById('main-app');
-	_reactDom2.default.render(_react2.default.createElement(_App2.default, null), app);
+	_reactDom2.default.render(_react2.default.createElement(_Root2.default, null), app);
+
+	var scroll_start = 0;
+	var startchange = (0, _jquery2.default)('#startchange');
+	var offset = startchange.offset();
+	(0, _jquery2.default)(document).scroll(function () {
+		scroll_start = (0, _jquery2.default)(this).scrollTop();
+		if (scroll_start > offset.top) {
+			(0, _jquery2.default)('#Panel-normal').stop(true).hide();
+			(0, _jquery2.default)('#Panel-small').stop(true).fadeIn();
+		} else {
+			(0, _jquery2.default)('#Panel-small').stop(true).hide();
+			(0, _jquery2.default)('#Panel-normal').stop(true).fadeIn();
+		}
+	});
+	(0, _jquery2.default)(".svg-container").css({ 'background-color': '#fcfcfc' });
 });
 
-},{"./Components/App":174,"jquery":26,"react":173,"react-dom":30}]},{},[188])
+},{"./Components/Root":193,"jquery":26,"react":173,"react-dom":30}]},{},[194])
 //# sourceMappingURL=bundle.js.map

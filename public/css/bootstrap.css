@@ -146,6 +146,7 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  background-color: #fcfcfc;
 }
 
 optgroup {
@@ -2379,21 +2380,21 @@ fieldset[disabled] a.btn {
 }
 
 .btn-secondary:hover {
-  color: #373a3c;
-  background-color: #e6e6e6;
+  color: #fff;
+  background-color: rgba(96, 76, 19, 1);
   border-color: #adadad;
 }
 
 .btn-secondary:focus, .btn-secondary.focus {
-  color: #373a3c;
-  background-color: #e6e6e6;
+  color: #fff;
+  background-color: rgba(96, 76, 19, 1);
   border-color: #adadad;
 }
 
 .btn-secondary:active, .btn-secondary.active,
 .open > .btn-secondary.dropdown-toggle {
-  color: #373a3c;
-  background-color: #e6e6e6;
+  color: #fff;
+  background-color: rgba(96, 76, 19, 1);
   border-color: #adadad;
   background-image: none;
 }
@@ -4171,7 +4172,7 @@ tbody.collapse.in {
   position: relative;
   display: block;
   margin-bottom: 0.75rem;
-  background-color: #fff;
+  background-color: #fcfcfc;
   border-radius: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.125);
 }

@@ -3,6 +3,6 @@ import React from "react";
 export default class Header extends React.Component {
 
 	render(){
-        return <header>{this.props.children}</header>;
+        return <header className="navbar-fixed-top">{this.props.children}</header>;
 	}
 }
