@@ -8,7 +8,7 @@ export default class Dashboard extends React.Component {
 
 	render(){
 		return(	
-			<div id="card-container" className="p-t-12">
+			<div id="card-container" className="p-t-15">
 				{/*<DatePicker />*/}
 				<Row1 />
 				<Row2 />

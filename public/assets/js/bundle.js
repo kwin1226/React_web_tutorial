@@ -35405,7 +35405,7 @@ var Dashboard = function (_React$Component) {
 		value: function render() {
 			return _react2.default.createElement(
 				"div",
-				{ id: "card-container", className: "p-t-12" },
+				{ id: "card-container", className: "p-t-15" },
 				_react2.default.createElement(_Row2.default, null),
 				_react2.default.createElement(_Row4.default, null),
 				_react2.default.createElement(_Row6.default, null)
