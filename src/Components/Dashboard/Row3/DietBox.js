@@ -44,7 +44,7 @@ export default class DietBox extends React.Component {
 	}
 
 	_fetchDiets(dietID){
-		const url = 'http://localhost:3000/diets/' + dietID;
+		const url = 'http://140.138.77.152:3000/diets/' + dietID;
 		jQuery.ajax({
 		  method: 'GET',
 		  url: url,

@@ -35682,7 +35682,7 @@ var CommentBox = function (_React$Component) {
 
       _jquery2.default.ajax({
         method: 'GET',
-        url: 'http://localhost:3000/comments',
+        url: 'http://140.138.77.152:3000/comments',
         success: function success(comments) {
           var n = comments.length;
           _this3.setState({ comments: comments });
@@ -36287,7 +36287,7 @@ var DietBox = function (_React$Component) {
 		value: function _fetchDiets(dietID) {
 			var _this2 = this;
 
-			var url = 'http://localhost:3000/diets/' + dietID;
+			var url = 'http://140.138.77.152:3000/diets/' + dietID;
 			_jquery2.default.ajax({
 				method: 'GET',
 				url: url,

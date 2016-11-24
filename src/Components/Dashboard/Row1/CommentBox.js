@@ -91,7 +91,7 @@ export default class CommentBox extends React.Component {
   _fetchComments() {
     jQuery.ajax({
       method: 'GET',
-      url: 'http://localhost:3000/comments',
+      url: 'http://140.138.77.152:3000/comments',
       success: (comments) => {
         const n = comments.length;
         this.setState({ comments });
